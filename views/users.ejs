@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>list of all the users</title>
+    <style>
+    table,tr,td{
+        border: 1px solid black;
+    }
+    </style>
+</head>
+
+<body>
+    
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>UserName</th>
+                <th>email</th>
+            </tr>
+   <% for(post of users){%>
+            <tr>
+              <td><%=post.id%></td>
+              <td><%=post.username%></td>
+              <td><%=post.email%></td>
+              <td>
+                <form method="get" action="/users/<%=post.id%>/edit">
+                    <button>edit username</button>
+                  </form>
+              </td>
+            </tr>
+    <%}%>
+    <h2><a href="http://localhost:8080/users/add">add another user</a></h2>
+</table>
+
+</body>
+</html>
